@@ -47,7 +47,7 @@ exports.edit = async(req, res) => {
 
       
       const cambioUsuario = await genero.findByIdAndUpdate(_idGen, nGenero);
-      res.json({ msj: "la genero fue actualizada exitosamente"})
+      res.json({ msj: "el genero fue actualizado exitosamente"})
     } catch(error) {
       res.status(500).json(error);
     }

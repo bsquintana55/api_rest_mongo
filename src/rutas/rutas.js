@@ -1,27 +1,60 @@
 const routes = require('./rutas/rutas');
 
 const {Router}=require("express");
+
+//rutas cancion
 const rutasCancion=Router();
-const ctrHab=require("../controllers/cancionC")
+const ctrCan=require("../controllers/cancionC")
+
+//rutas album
+const rutasAlbum=Router();
+const ctrAlb=require("../controllers/albumC")
+
+//rutas genero
+const rutasGenero=Router();
+const ctrGen=require("../controllers/generoC")
+
 const multer=require("multer");
-
-
-
 
 const carga=multer({storage:rutaStorage});
 
 
+//cancion
+rutasCancion.get('/', ctrCan.obtener);
 
-rutasCancion.get('/', ctrHab.obtener);
+rutasCancion.get('/:id', ctrCan.obtenerid);
 
-rutasCancion.get('/:id', ctrHab.obtenerid);
-
-rutasCancion.post('/', ctrHab.add);
+rutasCancion.post('/', ctrCan.add);
   
-rutasCancion.put('/:id',ctrHab.edit);
+rutasCancion.put('/:id',ctrCan.edit);
+
+//album
+
+rutasAlbum.get('/', ctrAlb.obtener);
+
+rutasAlbum.get('/:id', ctrAlb.obtenerid);
+
+rutasAlbum.post('/', ctrAlb.add);
+  
+rutasAlbum.put('/:id', ctrAlb.edit);
+
+
+//genero
+
+rutasGenero.get('/', ctrGen.obtener);
+
+rutasGenero.get('/:id', ctrGen.obtenerid);
+
+rutasGenero.post('/', ctrGen.add);
+  
+rutasGenero.put('/:id', ctrGen.edit);
+
+
 
 
 module.exports=rutasCancion;
+module.exports=rutasAlbum;
+module.exports=rutasGenero;
 
 
 /*
