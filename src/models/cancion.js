@@ -5,7 +5,7 @@ const cancionSchema = new mongoose.Schema({
     nom_can: String,
     f_graba: Date,
     dura_can: String,
-    id_alFK: Number,
+    _idAlbFK: Number,
     estado_can: String
     
   });

@@ -26,13 +26,13 @@ exports.obtenerid = async (req, res) => {
     try {
   
       //const { nombrehab, numerohab, capacidad, camas, descripcion, wifi, tv, banio, cajafuerte, nevera, valornoche, img, estado } = req.body;
-      const nuevaCancion = new cancion(req.body)
+      const nCancion = new cancion(req.body)
       console.log(req.file);
 
      
-      await nuevaCancion.save();
-      console.log(nuevaCancion);
-      //res.json({ msj: "Usuario registrado exitosamente", id: nuevaCancion._id })
+      await nCancion.save();
+      console.log(nCancion);
+      //res.json({ msj: "Usuario registrado exitosamente", id: nCancion._id })
     } catch (error) {
       res.status(500).json({msj:"Error al registrar"+error})
     }
@@ -41,13 +41,13 @@ exports.obtenerid = async (req, res) => {
 
 exports.edit = async(req, res) => {
     try {
-      const id = req.params.id;
-      const nuevaCancion = new cancion(req.body,req.file)
+      const _idCan = req.params._idCan;
+      const nCancion = new cancion(req.body,req.file)
       console.log(req.file);
 
       
-      const cambioUsuario = await cancion.findByIdAndUpdate(id, nuevaCancion);
-      res.json({ msj: "Cancion actualizada exitosamente"})
+      const cambioUsuario = await cancion.findByIdAndUpdate(_idCan, nCancion);
+      res.json({ msj: "la cancion fue actualizada exitosamente"})
     } catch(error) {
       res.status(500).json(error);
     }
