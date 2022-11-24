@@ -4,7 +4,6 @@ const albumSchema = new mongoose.Schema({
     _idAlb:Number,
     nom_alb: String,
     a_graba: Date,
-    _idGenFK: Number,
     estado_alb: String
 
   });
