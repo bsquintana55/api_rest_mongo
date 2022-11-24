@@ -1,20 +1,19 @@
-const express = require("express");
-const app = express();
+const express = require('express');
+const mongoose = require('mongoose');
 
-app.get('/', function (req, res) {
-    res.send('Holuuu');
-  });
-  
-  app.post('/hola', function (req, res) {
-    res.send('[POST]Saludos desde express');
-  });
-  app.get('/hola', function (req, res) {
-    res.send('[GET]Saludos desde express');
-  });
+const app = express();
+//
+require('dotenv').config();
+
+database_url = mongodb://localhost:27017/albumes
+const mongoString = process.env.database_url
+
+
+
+
 
 
 
 app.listen(4000, () => {
- console.log("El servidor está inicializado en el puerto 4000");
-});
-
+    console.log(`servidor encendido puerto ${4000}`)
+})
