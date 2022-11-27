@@ -1,6 +1,6 @@
 [ 
     {
-        "_idCancion" : "1",
+        "_id" : "1",
         "nombreCancion":"un coco",
         "fechaGrabacion":"09/07/2022",
         "duracionCancion":"4min",
@@ -8,7 +8,7 @@
     },
 
     {
-        "_idCancion" : "2",
+        "_id" : "2",
         "nombreCancion":"belixe",
         "fechaGrabacion":"17/09/2022",
         "duracionCancion":"6min",
@@ -17,7 +17,7 @@
 
     {
         
-        "_idCancion" : "3",
+        "_id" : "3",
         "nombreCancion":"red bone",
         "fechaGrabacion":"18/11/2012",
         "duracionCancion":"5min",

@@ -1,10 +1,12 @@
 const {Schema,model}=require("mongoose");
 
 const albumSchema = new mongoose.Schema({
-    _idAlb:Number,
-    nom_alb: String,
-    a_graba: Date,
-    estado_alb: String
+    _id:Number,
+    nombreAlbum: String,
+    anioPublicacion: String,
+    estadoAlbum: String
+
+  
 
   });
 

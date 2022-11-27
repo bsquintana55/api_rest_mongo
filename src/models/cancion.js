@@ -1,11 +1,12 @@
 const {Schema,model}=require("mongoose");
 
 const cancionSchema = new mongoose.Schema({
-    _idCan:Number,
-    nom_can: String,
-    f_graba: Date,
-    dura_can: String,
-    estado_can: String
+    _id:Number,
+    nombreCancion: String,
+    fechaGrabacion: Date,
+    duracionCancion: String,
+    estadoCancion: String
+   
     
   });
 
