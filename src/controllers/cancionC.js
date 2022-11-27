@@ -92,7 +92,7 @@ exports.edit = async(req, res) => {
       console.log(req.file);
 
       
-      const cambioUsuario = await cancion.findByIdAndUpdate(_id, nCancion);
+      const cambioCancion = await cancion.findByIdAndUpdate(_id, nCancion);
       res.json({ msj: "la cancion fue actualizada exitosamente"})
     } catch(error) {
       res.status(500).json(error);

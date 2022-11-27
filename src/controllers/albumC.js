@@ -88,7 +88,7 @@ exports.edit = async(req, res) => {
       console.log(req.file);
 
       
-      const cambioUsuario = await album.findByIdAndUpdate(_id, nAlbum);
+      const cambioAlbum = await album.findByIdAndUpdate(_id, nAlbum);
       res.json({ msj: "el album fue actualizado exitosamente"})
     } catch(error) {
       res.status(500).json(error);
