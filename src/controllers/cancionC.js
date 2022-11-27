@@ -1,5 +1,7 @@
-const cancion = require("../models/cancion.js");
+const cancion = require("../models/cancion");
+const album = require("../models/album");
 const jwt=require("jsonwebtoken");
+const album = require("../models/album");
 
 exports.obtener = async (req, res) => {
   try {
@@ -10,7 +12,6 @@ exports.obtener = async (req, res) => {
       "fechaGrabacion": 1,
       "duracionCancion": 1,
       "estadoCancion": 1
-
     });;
     res.status(200).json(cancion);
   } catch (error) {
@@ -38,18 +39,47 @@ exports.obtenerid = async (req, res) => {
   
   }
 
+  //registrar
   exports.add = async (req, res) => {
     try {
-  
-      //const { nombrehab, numerohab, capacidad, camas, descripcion, wifi, tv, banio, cajafuerte, nevera, valornoche, img, estado } = req.body;
-      const nCancion = new cancion(req.body)
-      console.log(req.file);
+  //crea constantes que suspongo que son para utilizarlas y mostralas en la vista
+      const {
+        _id,
+        nombreCancion,
+        fechaGrabacion,
+        duracionCancion,
+        estadoCancion,
+        albumId
 
+     } = new req.body;
+     //console.log(req.file);
+     //tae desde el modelo los id y hace una consulta por id
+     const album=await album.findById(albumId);
+     console.log(album._id);
+
+     const nCancion = new cancion({
+      _id,
+      nombreCancion,
+      fechaGrabacion,
+      duracionCancion,
+      estadoCancion,
+      albumId: albumId
+       
+     })
      
-      await nCancion.save();
-      console.log(nCancion);
-      //res.json({ msj: "Usuario registrado exitosamente", id: nCancion._id })
-    } catch (error) {
+     try{
+       const saveCancion=await nCancion.save();
+       album.cancion=album.cancion.concat(saveCancion._id);
+       await album.save();
+
+       console.log(saveCancion)
+       res.status(200).json(saveCancion);
+       //segundo try
+     }catch (error) {
+       res.status(500).json({msj:"Error al registrar"+error})
+     }
+//catch del primer try
+   } catch (error) {
       res.status(500).json({msj:"Error al registrar"+error})
     }
   

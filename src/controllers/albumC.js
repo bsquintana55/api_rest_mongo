@@ -1,9 +1,8 @@
 const album = require("../models/album");
-const album = require("../models/cancion");
-const album = require("../models/genero");
-const jwt=require("jsonwebtoken");
 const genero = require("../models/genero");
+const jwt=require("jsonwebtoken");
 
+//
 exports.obtener = async (req, res) => {
   try {
     const album = await album.find().populate('genero',{
@@ -19,7 +18,7 @@ exports.obtener = async (req, res) => {
   }
 
 }
-
+  //get id
 exports.obtenerid = async (req, res) => {
     try {
       const _id = req.params._id;
@@ -37,6 +36,7 @@ exports.obtenerid = async (req, res) => {
   
   }
 
+  //registrar
   exports.add = async (req, res) => {
     try {
   
