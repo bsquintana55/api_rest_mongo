@@ -1,9 +1,18 @@
 const album = require("../models/album");
+const album = require("../models/cancion");
+const album = require("../models/genero");
 const jwt=require("jsonwebtoken");
+const genero = require("../models/genero");
 
 exports.obtener = async (req, res) => {
   try {
-    const album = await album.find();
+    const album = await album.find().populate('genero',{
+
+      "_id":1,
+    "nombreGenero": 1,
+    "estadoGenero": 1
+
+    });
     res.status(200).json(album);
   } catch (error) {
     res.status(500).json(error)
@@ -14,7 +23,13 @@ exports.obtener = async (req, res) => {
 exports.obtenerid = async (req, res) => {
     try {
       const _id = req.params._id;
-      const album = await album.findById(_id);
+      const album = await album.findById(_id).populate('genero',{
+
+      "_id":1,
+      "nombreGenero": 1,
+      "estadoGenero": 1
+  
+      });
       res.status(200).json(album);
     } catch (error) {
       res.status(500).json(error)
@@ -25,13 +40,40 @@ exports.obtenerid = async (req, res) => {
   exports.add = async (req, res) => {
     try {
   
-      //const { nombrehab, numerohab, capacidad, camas, descripcion, wifi, tv, banio, cajafuerte, nevera, valornoche, img, estado } = req.body;
-      const nAlbum = new album(req.body)
-      console.log(req.file);
+       const {
+      _id,
+      nombreAlbum,
+      anioPublicacion,
+      estadoAlbum,
+      generoId
+      } = new req.body;
+      //console.log(req.file);
+      const genero=await genero.findById(generoId);
+      console.log(genero._id);
 
-     
-      await nAlbum.save();
-      console.log(nAlbum);
+      const nAlbum = new album({
+      _id,
+      nombreAlbum,
+      anioPublicacion,
+      estadoAlbum,
+      genero: genero._id
+        
+      })
+      
+      try{
+        const saveAlbum=await nAlbum.save();
+        genero.album=genero.album.concat(saveAlbum._id);
+        await genero.save();
+
+        console.log(saveAlbum)
+        res.status(200).json(saveAlbum);
+      }catch (error) {
+        res.status(500).json({msj:"Error al registrar"+error})
+      }
+
+
+
+
       //res.json({ msj: "Usuario registrado exitosamente", id: nAlbum._id })
     } catch (error) {
       res.status(500).json({msj:"Error al registrar"+error})

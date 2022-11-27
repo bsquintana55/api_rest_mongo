@@ -3,7 +3,15 @@ const jwt=require("jsonwebtoken");
 
 exports.obtener = async (req, res) => {
   try {
-    const cancion = await cancion.find();
+    const cancion = await cancion.find().populate('album',{
+
+      "_id":1,
+      "nombreCancion": 1,
+      "fechaGrabacion": 1,
+      "duracionCancion": 1,
+      "estadoCancion": 1
+
+    });;
     res.status(200).json(cancion);
   } catch (error) {
     res.status(500).json(error)
@@ -14,7 +22,15 @@ exports.obtener = async (req, res) => {
 exports.obtenerid = async (req, res) => {
     try {
       const _id = req.params._id;
-      const cancion = await cancion.findById(_id);
+      const cancion = await cancion.findById(_id).populate('album',{
+
+      "_id":1,
+      "nombreCancion": 1,
+      "fechaGrabacion": 1,
+      "duracionCancion": 1,
+      "estadoCancion": 1
+
+      });;
       res.status(200).json(cancion);
     } catch (error) {
       res.status(500).json(error)
