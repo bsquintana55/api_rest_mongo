@@ -26,7 +26,4 @@ rutasGenero.put('/:id', ctrGen.edit);
 
 
 
-
-module.exports=rutasCancion;
-module.exports=rutasAlbum;
 module.exports=rutasGenero;
