@@ -1,0 +1,26 @@
+[ 
+    {
+        "_id" : "1",
+
+        "nombreGenero":"rock",
+       
+        "estadoGenero":"activo"
+    },
+
+    {
+        "_id" : "2",
+
+        "nombreGenero":"pop",
+       
+        "estadoGenero":"activo"
+    },
+
+    {
+        "_id" : "3",
+
+        "nombreGenero":"reggaeton",
+       
+        "estadoGenero":"inactivo"
+    }
+ 
+]

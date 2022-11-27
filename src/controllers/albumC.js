@@ -13,8 +13,8 @@ exports.obtener = async (req, res) => {
 
 exports.obtenerid = async (req, res) => {
     try {
-      const _idAlb = req.params._idAlb;
-      const album = await album.findById(_idAlb);
+      const _id = req.params._id;
+      const album = await album.findById(_id);
       res.status(200).json(album);
     } catch (error) {
       res.status(500).json(error)
@@ -41,12 +41,12 @@ exports.obtenerid = async (req, res) => {
 
 exports.edit = async(req, res) => {
     try {
-      const _idAlb = req.params._idAlb;
+      const _id = req.params._id;
       const nAlbum = new album(req.body,req.file)
       console.log(req.file);
 
       
-      const cambioUsuario = await album.findByIdAndUpdate(_idAlb, nAlbum);
+      const cambioUsuario = await album.findByIdAndUpdate(_id, nAlbum);
       res.json({ msj: "el album fue actualizado exitosamente"})
     } catch(error) {
       res.status(500).json(error);

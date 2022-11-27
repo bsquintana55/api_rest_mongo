@@ -1,9 +1,9 @@
 const {Schema,model}=require("mongoose");
 
 const generoSchema = new mongoose.Schema({
-    _idGen:Number,
-    nom_gen: String,
-    estado_gen: String
+    _id:Number,
+    nombreGenero: String,
+    estadoGenero: String
 
   });
 

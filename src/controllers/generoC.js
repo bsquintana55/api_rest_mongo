@@ -13,8 +13,8 @@ exports.obtener = async (req, res) => {
 
 exports.obtenerid = async (req, res) => {
     try {
-      const _idGen = req.params._idGen;
-      const genero = await genero.findById(_idGen);
+      const _id = req.params._id;
+      const genero = await genero.findById(_id);
       res.status(200).json(genero);
     } catch (error) {
       res.status(500).json(error)
@@ -41,12 +41,12 @@ exports.obtenerid = async (req, res) => {
 
 exports.edit = async(req, res) => {
     try {
-      const _idGen = req.params._idGen;
+      const _id = req.params._id;
       const nGenero = new genero(req.body,req.file)
       console.log(req.file);
 
       
-      const cambioUsuario = await genero.findByIdAndUpdate(_idGen, nGenero);
+      const cambioUsuario = await genero.findByIdAndUpdate(_id, nGenero);
       res.json({ msj: "el genero fue actualizado exitosamente"})
     } catch(error) {
       res.status(500).json(error);

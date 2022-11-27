@@ -1,0 +1,24 @@
+[ 
+    {
+        "_id" : "1",
+        "nombreAlbum":"un verano sin ti",
+        "anioPublicacion":"2022",
+        "estadoAlbum":"activo"
+    },
+
+    {
+        "_id" : "2",
+        "nombreAlbum":"feliz cumpleaños ferxxo",
+        "anioPublicacion":"2022",
+        "estadoAlbum":"inactivo"
+    },
+
+    {
+        "_id" : "3",
+        "nombreAlbum":"colores",
+        "anioPublicacion":"2020",
+        "estadoAlbum":"inactivo"
+    }
+    
+ 
+]
