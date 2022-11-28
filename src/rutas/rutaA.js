@@ -1,4 +1,4 @@
-const routes = require('./rutas/rutas');
+const routes = require('../src/');
 
 const {Router}=require("express");
 

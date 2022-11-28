@@ -16,11 +16,11 @@
     "name": "api_rest_mongo",
     "version": "1.0.0",
     "description": "Api rest en mongo de canciones",
-    "main": "index.js",
+    "main": "./src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index",
-        "dev": "nodemon --watch ./src/index.js"
+        "start": "node ./src/index.js",
+        "dev": "nodemon --watch ./src/index"
     },
     "repository": {
         "type": "git",
@@ -31,5 +31,6 @@
     "bugs": {
         "url": "https://github.com/bsquintana55/api_rest_mongo/issues"
     },
-    "homepage": "https://github.com/bsquintana55/api_rest_mongo#readme"
+    "homepage": "https://github.com/bsquintana55/api_rest_mongo#readme",
+    "type": "module"
 }
