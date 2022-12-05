@@ -4,8 +4,12 @@ const albumSchema = new mongoose.Schema({
     _id:Number,
     nombreAlbum: String,
     anioPublicacion: String,
-    estadoAlbum: String
-
+    estadoAlbum: String,
+    
+    cancion:[{
+      type:Schema.Types.ObjectId,
+      ref:'cancion'
+    }]
   
 
   });
