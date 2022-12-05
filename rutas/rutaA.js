@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream:src/rutas/rutaA.js
-const routes = require('../src/');
-=======
->>>>>>> Stashed changes:rutas/rutaA.js
 
 const {Router}=require("express");
 

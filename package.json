@@ -1,40 +1,4 @@
 {
-<<<<<<< Updated upstream
-    "dependencies": {
-        "body-parser": "^1.20.1",
-        "cors": "^2.8.5",
-        "dotenv": "^16.0.3",
-        "express": "^4.18.2",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.7.3",
-        "morgan": "^1.10.0",
-        "multer": "^1.4.5-lts.1",
-        "sweetalert": "^2.1.2"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.20"
-    },
-    "name": "api_rest_mongo",
-    "version": "1.0.0",
-    "description": "Api rest en mongo de canciones",
-    "main": "./src/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node ./src/index.js",
-        "dev": "nodemon --watch ./src/index"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/bsquintana55/api_rest_mongo.git"
-    },
-    "author": "Sol Quintana",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/bsquintana55/api_rest_mongo/issues"
-    },
-    "homepage": "https://github.com/bsquintana55/api_rest_mongo#readme",
-    "type": "module"
-=======
   "name": "api_rest_mongo",
   "version": "1.0.0",
   "description": "",
@@ -65,5 +29,4 @@
   "devDependencies": {
     "nodemon": "^2.0.20"
   }
->>>>>>> Stashed changes
 }
