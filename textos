@@ -1,6 +1,7 @@
 
 compas
 mongodb+srv://solq44:sol44q@cluster0.hx2oziu.mongodb.net/disquera
+mongodb+srv://solq44:sol44q@cluster0.hx2oziu.mongodb.net/?retryWrites=true&w=majority
 
 - [https://asfo.medium.com/desarrollando-una-sencilla-api-rest-con-nodejs-y-express-cab0813f7e4b]
 
@@ -15,3 +16,86 @@ mongodb+srv://solq44:sol44q@cluster0.hx2oziu.mongodb.net/disquera
 heruko
 
 HERU2005solangiequintana.
+
+
+
+
+[ 
+    {
+        "_id" : "1",
+        "nombreAlbum":"un verano sin ti",
+        "anioPublicacion":"2022",
+        "estadoAlbum":"activo"
+    },
+
+    {
+        "_id" : "2",
+        "nombreAlbum":"feliz cumpleaños ferxxo",
+        "anioPublicacion":"2022",
+        "estadoAlbum":"inactivo"
+    },
+
+    {
+        "_id" : "3",
+        "nombreAlbum":"colores",
+        "anioPublicacion":"2020",
+        "estadoAlbum":"inactivo"
+    }
+
+],
+[ 
+    {
+        "_id" : "1",
+        "nombreCancion":"un coco",
+        "fechaGrabacion":"09/07/2022",
+        "duracionCancion":"4min",
+        "estadoCancion":"activo"
+    },
+
+    {
+        "_id" : "2",
+        "nombreCancion":"belixe",
+        "fechaGrabacion":"17/09/2022",
+        "duracionCancion":"6min",
+        "estadoCancion":"inactivo"
+    },
+
+    {
+        
+        "_id" : "3",
+        "nombreCancion":"red bone",
+        "fechaGrabacion":"18/11/2012",
+        "duracionCancion":"5min",
+        "estadoCancion":"activo"
+    }
+    
+ 
+],
+[ 
+    {
+        "_id" : "1",
+
+        "nombreGenero":"rock",
+       
+        "estadoGenero":"activo"
+    },
+
+    {
+        "_id" : "2",
+
+        "nombreGenero":"pop",
+       
+        "estadoGenero":"activo"
+    },
+
+    {
+        "_id" : "3",
+
+        "nombreGenero":"reggaeton",
+       
+        "estadoGenero":"inactivo"
+    }
+ 
+]
+
+
